@@ -35,7 +35,7 @@ public class MainJFrame extends javax.swing.JFrame {
     }
     
     private void startGame() {
-        botRadioButton.setEnabled(false);
+        botCheckBox.setEnabled(false);
         xRadio.setEnabled(false);
         oRadio.setEnabled(false);
         startGameButton.setText("Stop Game");
@@ -48,7 +48,7 @@ public class MainJFrame extends javax.swing.JFrame {
     private void stopGame(boolean win, FieldStatusEnum winner) {
         //Message win/lost
         if (win && winner != FieldStatusEnum.NONE) {
-            if (botRadioButton.isSelected()) {
+            if (botCheckBox.isSelected()) {
                 if (winner == defPlayer) {
                     JOptionPane.showMessageDialog(null, "You won!");
                 } else if (winner == botPlayer) {
@@ -61,7 +61,7 @@ public class MainJFrame extends javax.swing.JFrame {
         } else if (winner == FieldStatusEnum.NONE) {
             JOptionPane.showMessageDialog(null, "Spiel zuende\nUnentschieden");
         }
-        botRadioButton.setEnabled(true);
+        botCheckBox.setEnabled(true);
         xRadio.setEnabled(true);
         oRadio.setEnabled(true);
         startGameButton.setText("Start Game");
@@ -88,7 +88,7 @@ public class MainJFrame extends javax.swing.JFrame {
     
     private void setPos(int x, int y, JButton button) {
         button.setEnabled(false);
-        if (botRadioButton.isSelected()) {
+        if (botCheckBox.isSelected()) {
             field.setFieldPos(x, y, defPlayer);
             button.setText(defPlayer.toString());
         } else {
@@ -99,7 +99,7 @@ public class MainJFrame extends javax.swing.JFrame {
         if (status != FieldStatusEnum.NONE || (!field.isDraw())) {
             stopGame(field.isDraw(), status);
             return;
-        } else if (!botRadioButton.isSelected()) {
+        } else if (!botCheckBox.isSelected()) {
             if (player == FieldStatusEnum.O) {
                 player = FieldStatusEnum.X;
                 xRadio.setSelected(true);
@@ -109,7 +109,7 @@ public class MainJFrame extends javax.swing.JFrame {
             }
         }
         //Bot action
-        if (botRadioButton.isSelected()) {
+        if (botCheckBox.isSelected()) {
             Random rd = new Random();
             int xRand;
             int yRand;
@@ -149,7 +149,7 @@ public class MainJFrame extends javax.swing.JFrame {
         jButton7 = new javax.swing.JButton();
         jButton8 = new javax.swing.JButton();
         jButton9 = new javax.swing.JButton();
-        botRadioButton = new javax.swing.JRadioButton();
+        botCheckBox = new javax.swing.JCheckBox();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Tic Tac Toe");
@@ -247,8 +247,8 @@ public class MainJFrame extends javax.swing.JFrame {
         });
         fieldPanel.add(jButton9);
 
-        botRadioButton.setSelected(true);
-        botRadioButton.setText("Gegen Computer spielen");
+        botCheckBox.setSelected(true);
+        botCheckBox.setLabel("Gegen Computer spielen");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -258,13 +258,13 @@ public class MainJFrame extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addComponent(fieldPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(startGameButton, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                         .addComponent(xRadio)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(oRadio)
                         .addGap(18, 18, 18)
-                        .addComponent(botRadioButton))
-                    .addComponent(startGameButton, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(botCheckBox)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -274,8 +274,8 @@ public class MainJFrame extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(xRadio)
                     .addComponent(oRadio)
-                    .addComponent(botRadioButton))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 10, Short.MAX_VALUE)
+                    .addComponent(botCheckBox))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(startGameButton)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(fieldPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -286,7 +286,7 @@ public class MainJFrame extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void startGameButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_startGameButtonActionPerformed
-        if (botRadioButton.isSelected()) {
+        if (botCheckBox.isSelected()) {
             if (xRadio.isSelected()) {
                 defPlayer = FieldStatusEnum.X;
                 botPlayer = FieldStatusEnum.O;
@@ -382,7 +382,7 @@ public class MainJFrame extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JRadioButton botRadioButton;
+    private javax.swing.JCheckBox botCheckBox;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JPanel fieldPanel;
     private javax.swing.JButton jButton1;

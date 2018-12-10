@@ -37,14 +37,14 @@
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="1" max="-2" attributes="0">
                   <Component id="fieldPanel" max="32767" attributes="0"/>
+                  <Component id="startGameButton" min="-2" pref="250" max="-2" attributes="0"/>
                   <Group type="102" alignment="0" attributes="0">
                       <Component id="xRadio" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="oRadio" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="botRadioButton" min="-2" max="-2" attributes="0"/>
+                      <Component id="botCheckBox" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <Component id="startGameButton" min="-2" pref="250" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="32767" attributes="0"/>
           </Group>
@@ -57,9 +57,9 @@
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="xRadio" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="oRadio" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="botRadioButton" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="botCheckBox" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="10" max="32767" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
               <Component id="startGameButton" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
               <Component id="fieldPanel" min="-2" pref="250" max="-2" attributes="0"/>
@@ -159,10 +159,10 @@
         </Component>
       </SubComponents>
     </Container>
-    <Component class="javax.swing.JRadioButton" name="botRadioButton">
+    <Component class="javax.swing.JCheckBox" name="botCheckBox">
       <Properties>
         <Property name="selected" type="boolean" value="true"/>
-        <Property name="text" type="java.lang.String" value="Gegen Computer spielen"/>
+        <Property name="label" type="java.lang.String" value="Gegen Computer spielen"/>
       </Properties>
     </Component>
   </SubComponents>
