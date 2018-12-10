@@ -1,7 +1,11 @@
 ### NetBeans ###
 **/nbproject/private/
 */build/
+*/*/build/
 /*nbbuild/
-/*dist/
+*/dist/
+*/*/dist/
 */nbdist/
+*/*/nbdist/
 */.nb-gradle/
+*/*/.nb-gradle/
